@@ -1,6 +1,12 @@
+import { useContext } from "react"
+import { ThemeContext } from "../context/ThemeContext"
+
 export default function Footer(props) {
+
+  const { themeName } = useContext(ThemeContext)
+
   return (
-    <div className="container">
+    < div className="container" >
       <footer className="py-5">
         <div className="row">
           <div className="col-6 col-md-2 mb-3">
@@ -39,8 +45,9 @@ export default function Footer(props) {
 
         <div className="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
           <p>© 2023 Company, Inc. All rights reserved.</p>
+          <p>Theme: {themeName}</p>
         </div>
       </footer>
-    </div>
+    </div >
   )
 }
